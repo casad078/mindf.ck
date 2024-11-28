@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="header/header.css">
+    <link rel="stylesheet" href="footer/footer.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+<body>
+
+    </head>
+    <body>
+      <div id="header"></div> <!--DO NOT TOUCH, START HERE-->
+     
+
+
+
+
+
+
+      
+    
+      <div id="footer"></div> <!--DO NOT TOUCH, END HERE-->
+      <script>
+        // Function to load external HTML and insert it into a div
+        async function loadHTML(divId, filePath) {
+          const response = await fetch(filePath); // Fetch the file
+          const htmlContent = await response.text(); // Get its content
+          document.getElementById(divId).innerHTML = htmlContent; // Insert into div
+        }
+        
+        // Load the header and footer from their respective folders
+        loadHTML('header', 'header/header.html');
+        loadHTML('footer', 'footer/footer.html');
+      </script>
+    </body>
+    </html>
