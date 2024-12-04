@@ -18,4 +18,90 @@
 body {
 background-color: aliceblue;
 overflow-x: hidden;
+overflow-y: scroll;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+#background {
+width: 60%;
+display: block;
+margin-left: auto;
+margin-right: auto;
+opacity: 70%;
+}
+
+.dropdowns {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  font-size: 14px;
+  font-style: normal;
+}
+
+
+details {
+  cursor: pointer;
+}
+
+summary {
+  background-color: aliceblue;
+  font-size: 20px;
+  padding: 3px;
+  margin-left: -9px;
+  margin-right: -8px;
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+summary::marker {
+  color: transparent;
+}
+
+summary:hover {
+  border: 2px solid black;
+}
+
+details p {
+  margin-left: 10%;
+  margin-right: 40%;
+  overflow: hidden;
+  max-height: 0; /* Content is initially hidden */
+  transition: max-height 0.4s ease-in-out; /* Smooth opening/closing */
+}
+
+details[open] p {
+  max-height: 500px; /* Adjust to fit your content */
+}
+
+
+details h6 {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 15%;
+  margin-bottom: 2%;
+}
+
