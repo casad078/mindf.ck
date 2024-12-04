@@ -33,9 +33,6 @@ header {
   border-color: transparent;
   text-align: right;
  
-  margin-left: -7px;
-  margin-right: -7px;
-  margin-top: -20px;
   position: fixed;
   z-index: 6;
 } 
@@ -53,6 +50,11 @@ header {
 .dropdown {
   display: inline-block;
   margin-right: 10%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 6px 6px 6px 6px;
+  padding-right: 20px;
 }
 
 .dd-button {
