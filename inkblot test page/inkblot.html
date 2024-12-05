@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="header/header.css">
+    <link rel="stylesheet" href="footer/footer.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon-16x16.png">
+    <title>Inkblot Test</title>
+</head>
+<body>
+  <div id="header"></div> <!-- Header container -->
+
+  <!-- <div class="toppart">
+    <img src=""
+  </div> -->
+
+
+
+
+
+
+
+
+  <script>
+    // Function to load external HTML and insert it into a div
+    async function loadHTML(divId, filePath) {
+      try {
+        const response = await fetch(filePath);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const htmlContent = await response.text();
+        document.getElementById(divId).innerHTML = htmlContent;
+      } catch (error) {
+        console.error('Error loading HTML:', error);
+      }
+    }
+  
+    // Ensure the DOM is fully loaded before running the script
+    document.addEventListener('DOMContentLoaded', () => {
+      loadHTML('header', 'header/header.html');
+    });
+</script>
+</body>
+</html>
