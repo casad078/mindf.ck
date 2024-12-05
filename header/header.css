@@ -34,7 +34,7 @@ header {
   text-align: right;
  
   position: fixed;
-  z-index: 6;
+  z-index: 60;
 } 
 
  header img{
@@ -169,7 +169,7 @@ header {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: aliceblue;
+  background: black;
 }
 
 /* Handle on hover */
