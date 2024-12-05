@@ -15,16 +15,39 @@
     font-style: normal;
 } */
 
+/* 
+Neue Haas Grotesk Display Pro 95 Black
+font-family: "neue-haas-grotesk-display", sans-serif;
+font-weight: 900;
+font-style: normal; */
+
+* {
+  cursor: crosshair;
+  user-select: none;
+-webkit-user-select: none;  /* Chrome, Opera */
+-webkit-touch-callout: none;   /* Safari */
+-moz-user-select: none;   /* Firefox */
+-ms-user-select: none; 
+}
+
+/* Remove default margins and paddings from the body */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
 background-color: aliceblue;
 overflow-x: hidden;
 overflow-y: scroll;
 height: 100%;
+display: flex;
+flex-direction: column;
 }
 
 
 #background {
-width: 60%;
+width: 70%;
 display: block;
 margin-left: auto;
 margin-right: auto;
@@ -36,7 +59,8 @@ opacity: 100%;
   font-optical-sizing: auto;
   font-size: 14px;
   font-style: normal;
-  padding-top: 30px;
+  margin-top: -6%;
+  padding-bottom: 20px;
 }
 
 
@@ -92,40 +116,43 @@ details h6 {
   padding-bottom: 60px;
 }
 
-
 footer {
   font-family: "Reddit Mono", monospace;
   font-optical-sizing: auto;
   font-size: 14px;
   font-style: normal;
   z-index: 9;
+  border-top: 2px solid black;
+  padding: 20px;
+  padding-bottom: 70px;
+  height: 20px;
 }
 
 .logo img {
-  width: 10%;
-  position: relative;
-  bottom: -50px;
+  width: 12%;
+  position: absolute;
+  z-index: 6;
+  right: 0;
+  cursor: pointer;
+  padding-right: 11%;
+  padding-top: 10px;
 }
 
-.logo {
-  margin-left: 35%;
+.footer {
+  padding-left: 6%;
+  padding-top: 20px;
+  height: 0px;
 }
 
 .footer ul {
   color: black;
   display: flex;
-
+  padding-bottom: 20px;
 }
 
 .footer il {
-  font-size: 12px;
+  font-size: 18px;
 }
-
-.links {
-  margin-left: 60%;
-}
-
-
 
 .footer a {
   color: black;
@@ -137,6 +164,7 @@ footer {
 
 .footer a:hover {
   border: 1.5px solid black;
+  background-color: #0000003d;
 }
 
 .one, .two {
@@ -145,14 +173,55 @@ footer {
     font-style: normal;
     font-size: 200px;
     position: absolute;
+    background-color: #0000005d;
+    border: 2px solid black;
 }
 
-.one {
-  top: 0;
-  left: 0;
+.three, .four {
+  font-family: "Michroma", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 200px;
+    position: absolute;
+    background-color: #0000005d;
+    background: 
+    repeating-radial-gradient(#ffffff 0 0.0001%,#000000 0 0.0002%) 50% 0/2500px 2500px,
+    repeating-conic-gradient(#ffffff 0 0.0001%,#000000 0 0.0002%) 50% 50%/2500px 2500px;
+  background-blend-mode: difference;
+  mix-blend-mode: lighten;
+  overlay: 50%;
+  border: 2px solid black;
 }
 
-.two {
-  top: 0;
-  right: 0;
+.one, .three {
+  top: -4%;
+  left: 3%;
+}
+
+.two, .four {
+  top: 20%;
+  right:3%;
+}
+
+.starone {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 200px;
+  position: absolute;
+  z-index: -1;
+}
+
+.starone {
+  top: 22%;
+  left: 10%;
+}
+
+
+span {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 200px;
+
 }
