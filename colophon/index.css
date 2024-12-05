@@ -1,3 +1,17 @@
+/* .reddit-mono-<uniquifier> {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.michroma-regular {
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+} */
+
+
 * {
     cursor: crosshair;
     user-select: none;
@@ -65,3 +79,46 @@ footer {
     border: 1.5px solid black;
     background-color: #0000003d;
   }
+
+  span {
+  
+    font-family: "Reddit Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  p {
+    font-family: "Reddit Mono", monospace;
+    font-optical-sizing: auto;
+    font-size: 14px;
+    font-style: normal;
+  }
+
+  .text a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    padding: 4px;
+  }
+
+  a:hover {
+    background-color: #0000003d;
+    border-color: black;
+  }
+
+  h1 {
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+    padding-right: 30%;
+  }
+
+.text {
+    margin-left: 20%;
+    margin-right: 40%;
+    padding-bottom: 5px;
+}
