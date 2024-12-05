@@ -414,3 +414,17 @@ footer {
   overlay: 60%;
   border: 2px solid black;
   }
+
+  .heading h3 {
+    font-family: "Reddit Mono", monospace;
+    font-optical-sizing: auto;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .heading {
+    margin-left: 20%;
+    margin-right: 40%;
+    padding-top: 30px;
+  }
