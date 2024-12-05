@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/header/header.css">
+    <link rel="stylesheet" href="colophon.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon-16x16.png">
+    <title>Inkblot Test</title>
+</head>
+<body>
+  <div id="header"></div> <!-- Header container -->
+
+
+  <div class="title">
+    <h1>COLOPHON</h1>
+  </div>
+
+  <div class="text">
+    <p></p>
+  </div>
+
+
+    <footer>
+      <div class="content">
+      <div class="logo">
+          <a href="https://casad078.github.io/mindf.ck/"><img src="/images/LOGO.png"></a>
+      </div>
+      <div class="links">
+      <ul class="footer">
+          <il><a href="#" class="footer">&lt;REFERENCES&gt;</a></il> 
+          <il><a href="#" class="footer">&lt;MIND MATTERS&gt;</a></il> 
+          <il><a href="#" class="footer">&lt;COLOPHON&gt;</a></il>
+      </ul>
+      </div>
+      </div>
+    </footer>
+
+  <script>
+    // Function to load external HTML and insert it into a div
+    async function loadHTML(divId, filePath) {
+      try {
+        const response = await fetch(filePath); // Fetch the file
+        if (!response.ok) throw new Error(`Failed to load ${filePath}`);
+        const htmlContent = await response.text(); // Get its content
+        document.getElementById(divId).innerHTML = htmlContent; // Insert into div
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+  
+    // Load the header HTML file
+    loadHTML('header', '../header/header.html'); // Adjust path as needed
+  </script>
+</body>
+</html>
