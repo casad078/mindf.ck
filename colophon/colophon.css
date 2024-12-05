@@ -1,3 +1,19 @@
+* {
+    cursor: crosshair;
+    user-select: none;
+  -webkit-user-select: none;  /* Chrome, Opera */
+  -webkit-touch-callout: none;   /* Safari */
+  -moz-user-select: none;   /* Firefox */
+  -ms-user-select: none; 
+  }
+  
+  /* Remove default margins and paddings from the body */
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue;
+  }
+
 footer {
     font-family: "Reddit Mono", monospace;
     font-optical-sizing: auto;
@@ -8,6 +24,7 @@ footer {
     padding: 20px;
     padding-bottom: 70px;
     height: 20px;
+    margin-top: 450px;
   }
   
   .logo img {
