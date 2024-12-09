@@ -1,19 +1,36 @@
 const details = document.querySelectorAll("details");
 
-    details.forEach(detail => {
-      const summary = detail.querySelector("summary");
-      const content = detail.querySelector("p");
+details.forEach((detail) => {
+  const summary = detail.querySelector("summary");
+  const content = detail.querySelector(":scope > *:not(summary)"); // Select everything except <summary>
 
-      summary.addEventListener("click", () => {
-        if (detail.open) {
-          // Closing: Smoothly collapse
-          content.style.maxHeight = null;
-        } else {
-          // Opening: Smoothly expand
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-      });
-    });
+  // Apply initial styles for smooth transitions
+  content.style.transition = "max-height 0.3s ease";
+  content.style.overflow = "hidden";
+  content.style.maxHeight = "0"; // Collapsed by default
+
+  summary.addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent default toggle behavior of <summary>
+
+    const currentScroll = window.scrollY; // Store the current scroll position
+
+    if (detail.open) {
+      // Smoothly collapse
+      content.style.maxHeight = "0";
+      setTimeout(() => {
+        detail.removeAttribute("open"); // Remove open attribute after animation ends
+      }, 300); // Match transition duration
+    } else {
+      // Smoothly expand
+      detail.setAttribute("open", ""); // Set open attribute first
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+
+    // Restore scroll position to prevent page shift
+    window.scrollTo({ top: currentScroll });
+  });
+});
+
 
 
 // Get the modal
@@ -170,3 +187,4 @@ function handleEnter(event) {
 }
 
 textarea.addEventListener("keypress", handleEnter);
+
