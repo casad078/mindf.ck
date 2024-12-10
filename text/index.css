@@ -268,8 +268,6 @@ span {
   pointer-events: none; /* Prevent interactions with the stars */
 }
 
-
-
 @keyframes flip {
   from {
       transform: rotateY(0deg);
@@ -277,6 +275,16 @@ span {
   to {
       transform: rotateY(360deg);
   }
+}
+
+.subhead p {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  margin-top: -25px;
 }
 
 
