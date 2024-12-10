@@ -127,10 +127,27 @@ footer {
     margin-right: 40%;
 }
 
-.links {
-  padding: 4px;
+ul {
+  list-style-type: none; /* Removes the dots */
+  margin: 0; /* Optional: removes default margin */
+  padding: 0; /* Optional: removes default padding */
+  display: block;
 }
 
-il {
- margin-bottom: 4px;
+li {
+  margin-bottom: 10px; /* Adjust this value for desired spacing */
+  display: block;
+}
+
+li:not(:last-child) {
+  margin-bottom: 10px;
+} 
+
+h2 {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  padding-top: 15px;
 }
