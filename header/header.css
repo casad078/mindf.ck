@@ -176,3 +176,13 @@ header {
 ::-webkit-scrollbar-thumb:hover {
   background: black;
 }
+
+@media (max-width: 800px) { 
+
+  .dropdown {
+
+    padding-right: 20%;
+  }
+
+
+}

@@ -1,3 +1,108 @@
+function initCommentSection(container) {
+  const textarea = container.querySelector(".textarea");
+  const button = container.querySelector(".button");
+  const nameInput = container.querySelector(".name");
+  let editing = false;
+  let currentEditDiv = null;
+
+  function addComment() {
+    if (!textarea.value.trim()) {
+      textarea.value = "";
+      textarea.focus();
+      return;
+    }
+
+    const name = nameInput.value.trim() || "Anonymous";
+    const div = document.createElement("div");
+    const pname = document.createElement("p");
+    const p = document.createElement("p");
+    const hr = document.createElement("hr");
+    const deleteButton = document.createElement("input");
+    const editButton = document.createElement("input");
+
+    pname.textContent = `Written by ${name}`;
+    p.textContent = textarea.value;
+
+    pname.className = "pname";
+    p.className = "p";
+    hr.className = "hr";
+    deleteButton.className = "delete";
+    editButton.className = "edit";
+
+    deleteButton.type = "button";
+    deleteButton.value = "Delete";
+    editButton.type = "button";
+    editButton.value = "Edit";
+
+    div.appendChild(pname);
+    div.appendChild(p);
+    div.appendChild(deleteButton);
+    div.appendChild(editButton);
+    div.appendChild(hr);
+
+    container.appendChild(div);
+
+    textarea.value = "";
+    nameInput.value = "";
+    textarea.focus();
+
+    deleteButton.addEventListener("click", () => div.remove());
+
+    editButton.addEventListener("click", () => {
+      if (editing) return;
+      editing = true;
+      currentEditDiv = div;
+
+      textarea.value = p.textContent;
+      nameInput.value = name;
+
+      const confirmButton = document.createElement("input");
+      confirmButton.type = "button";
+      confirmButton.value = "Confirm Edit";
+      confirmButton.className = "confirm-button";
+
+      div.replaceChild(confirmButton, editButton);
+
+      confirmButton.addEventListener("click", () => {
+        if (!textarea.value.trim()) {
+          textarea.focus();
+          return;
+        }
+
+        const updatedName = nameInput.value.trim() || "Anonymous";
+        pname.textContent = `Edited by ${updatedName}`;
+        p.textContent = textarea.value;
+
+        div.replaceChild(editButton, confirmButton);
+
+        textarea.value = "";
+        nameInput.value = "";
+        editing = false;
+        currentEditDiv = null;
+      });
+    });
+  }
+
+  button.addEventListener("click", addComment);
+
+  textarea.addEventListener("keypress", (event) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      addComment();
+    }
+  });
+}
+
+// Initialize all comment sections
+document.querySelectorAll(".comments").forEach((section) => {
+  initCommentSection(section);
+});
+
+
+
+
+
+
 const details = document.querySelectorAll("details");
 
 details.forEach((detail) => {
@@ -32,7 +137,6 @@ details.forEach((detail) => {
 });
 
 
-
 // Get the modal
 var modal = document.getElementById("imageModal");
 
@@ -63,128 +167,3 @@ var closeModal = document.querySelector(".close");
 closeModal.onclick = function() {
   modal.style.display = "none"; // Hide the modal
 };
-
-
-
-
-
-var comments = document.getElementById("comments");
-var button = document.getElementById("button");
-var textarea = document.getElementById("textarea");
-var nameInput = document.getElementById("name");
-var name;
-var editing = false;
-
-function addComment() {
-  if (
-    textarea === null ||
-    textarea.value.length === 0 ||
-    /^\s+$/.test(textarea.value)
-  ) {
-    textarea.value = "";
-    textarea.focus();
-  } else if (editing === false) {
-    if (
-      nameInput === null ||
-      nameInput.value.length === 0 ||
-      /^\s+$/.test(nameInput.value)
-    ) {
-      name = "Anonymous";
-    } else {
-      name = nameInput.value;
-    }
-    var div = document.createElement("div");
-    comments.appendChild(div);
-    var pname = document.createElement("p");
-    var p = document.createElement("p");
-    var hr = document.createElement("hr");
-    var deleteButton = document.createElement("input");
-    var editButton = document.createElement("input");
-
-    pname.innerHTML = "Written by " + name;
-    p.innerHTML = textarea.value;
-
-    pname.setAttribute("class", "pname");
-    p.setAttribute("class", "p");
-    hr.setAttribute("class", "hr");
-    deleteButton.setAttribute("class", "delete");
-    editButton.setAttribute("class", "edit");
-
-    div.appendChild(pname);
-    div.appendChild(p);
-    div.appendChild(deleteButton);
-    div.appendChild(editButton);
-    div.appendChild(hr);
-
-    textarea.value = "";
-    nameInput.value = "";
-
-    deleteButton.type = "button";
-    deleteButton.value = "<DELETE>";
-    editButton.type = "button";
-    editButton.value = "<EDIT>";
-
-    textarea.focus();
-
-    function deleteComment() {
-      div.remove();
-    }
-
-    deleteButton.addEventListener("click", deleteComment);
-
-    function editComment() {
-      var confirmButton = document.createElement("input");
-      confirmButton.type = "button";
-      confirmButton.value = "<CONFIRM>";
-      div.replaceChild(confirmButton, editButton);
-      confirmButton.setAttribute("class", "confirm-button");
-      textarea.value = p.innerText;
-      p.innerHTML = "";
-      nameInput.value = name;
-      textarea.focus();
-      editing = true;
-
-      function confirmEdit() {
-        if (
-          textarea === null ||
-          textarea.value.length === 0 ||
-          /^\s+$/.test(textarea.value)
-        ) {
-          textarea.value = "";
-          textarea.focus();
-        } else {
-          if (
-            nameInput === null ||
-            nameInput.value.length === 0 ||
-            /^\s+$/.test(nameInput.value)
-          ) {
-            name = "Anonymous";
-          } else {
-            name = nameInput.value;
-          }
-          pname.innerHTML = "Edited by " + name;
-          p.innerHTML = textarea.value;
-          div.replaceChild(editButton, confirmButton);
-          textarea.value = "";
-          nameInput.value = "";
-          textarea.focus();
-          editing = false;
-        }
-      }
-      confirmButton.addEventListener("click", confirmEdit);
-    }
-    editButton.addEventListener("click", editComment);
-  }
-}
-
-button.addEventListener("click", addComment);
-
-function handleEnter(event) {
-  var code = event.keyCode;
-  if (code == 13) {
-    addComment();
-  }
-}
-
-textarea.addEventListener("keypress", handleEnter);
-
