@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="../references/index.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon-16x16.png">
+    <title>Colophon</title>
+</head>
+<body>
+  <div id="header"></div> <!-- Header container -->
+
+  <div class="text">
+
+    <div class="title">
+        <h1>REFERENCES</h1>
+    </div>
+
+    <div class="links">
+      <ul>
+        <li><a href="https://www.simplypsychology.org/what-is-the-rorschach-inkblot-test.html#:~:text=In%20addition%20to%20the%20official,scores%2C%20and%20extraordinary%20idiosyncratic%20perceptions">1) Mia Belle Frothingham, “Rorschach Inkblot Test: Definition, History & Interpretation.” Simply Psychology, January 19, 2024.</a></li>
+        <li><a href="https://www.markhumes.gallery/blogs/mark-humes-gallery-magazine/a-beginners-guide-to-understanding-abstract-art?srsltid=AfmBOooCZZYIGtK2Zog35MtuPPhGtqjhn9pxn9bYCZAXgLUURB54NKlY">2) “A Beginner’s Guide to Understanding Abstract Art.” Mark Humes Gallery. Accessed November 25, 2024.</a></li>
+        <li><a href="https://www.ezeeart.com/pareidolia-in-abstract-art-the-fascinating-phenomenon/">3) “Pareidolia in Abstract Art: The Fascinating Phenomenon.” ezeeart, November 7, 2024.</a></li>
+        <li><a href="https://www.art-is-fun.com/understanding-abstract-art#:~:text=Abstract%20art%20doesn%27t%20contain,what%20they%20see%20before%20them" >4) “Understanding Abstract Art: The Secret to Making Sense of Modern Abstract Art.” Art is Fun. Accessed November 25, 2024.</a></il>
+        <li><a href="https://www.quora.com/Art-should-comfort-the-disturbed-and-disturb-the-comfortable-True-or-false">5) “Art Should Comfort the Disturbed, and Disturb the Comfortable. True or False?” Quora. Accessed November 25, 2024.</a></li>
+        <li><a href="https://biasinsideus.si.edu/online-exhibition/the-science-of-bias">6) Sites. “The Science of Bias.” The Bias Inside Us. Accessed November 25, 2024.</a></li>
+        <li><a href="https://www.datacolor.com/business-solutions/blog/why-we-cant-agree-color-perception/" >7) Datacolor. “The Fascinating Science behind Color Perception.” Datacolor, November 19, 2024.</a></li>
+        <li><a href="https://www.psychologytoday.com/us/basics/pareidolia" >8) “Pareidolia.” Psychology Today. Accessed November 25, 2024.</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+    <footer>
+      <div class="content">
+      <div class="logo">
+          <a href="https://casad078.github.io/mindf.ck/"><img src="../images/LOGO.png"></a>
+      </div>
+      <div class="links">
+      <ul class="footer">
+          <!-- <il><a href="#" class="footer">&lt;REFERENCES&gt;</a></il>  -->
+          <il><a href="https://casad078.github.io/mindf.ck/colophon/index.html" class="footer">&lt;COLOPHON&gt;</a></il>
+      </ul>
+      </div>
+      </div>
+    </footer>
+
+  <script>
+    // Function to load external HTML and insert it into a div
+    async function loadHTML(divId, filePath) {
+      try {
+        const response = await fetch(filePath); // Fetch the file
+        if (!response.ok) throw new Error(`Failed to load ${filePath}`);
+        const htmlContent = await response.text(); // Get its content
+        document.getElementById(divId).innerHTML = htmlContent; // Insert into div
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+  
+    // Load the header HTML file
+    loadHTML('header', '../header/header.html'); // Adjust path as needed
+  </script>
+</body>
+</html>
