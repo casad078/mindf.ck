@@ -225,3 +225,38 @@ span {
   font-size: 200px;
 
 }
+
+
+@media (max-width: 800px) { 
+
+.title h1, .titleoverlay h1, .title span, .titleoverlay span {
+  font-size: 40px;
+}
+
+.one, .three {
+  top: 13%;
+  left: 25%;
+}
+
+.two, .four {
+  top: 22%;
+  right: 25%;
+}
+
+.starone {
+  display: none;
+}
+
+.dropdowns {
+  padding-top: 50px;
+}
+
+summary {
+  font-size: 25px;
+}
+
+.logo img {
+  width: 30%;
+}
+
+}
