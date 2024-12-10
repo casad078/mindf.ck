@@ -496,4 +496,11 @@ textarea {
   padding: 4px;
 }
 
+footer {
+  padding: 0px;
+  padding-bottom: 70px;
+  height: auto;
+  margin-top: 170px;
+}
+
 }
