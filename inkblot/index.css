@@ -258,6 +258,7 @@
   
   .pname {
     margin-top: 10px;
+    padding-top: 15px;
     font-size: 18px;
   }
   
@@ -432,7 +433,6 @@ footer {
   }
 
   .heading {
-    margin-bottom: 20px;
     padding: 20px;
     text-align: center;
     margin-left: 10%;
