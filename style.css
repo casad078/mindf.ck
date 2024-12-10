@@ -226,6 +226,10 @@ span {
 
 }
 
+details p:last-of-type {
+  padding-bottom: 3%;
+}
+
 
 @media (max-width: 800px) { 
 
@@ -266,5 +270,10 @@ footer {
   margin-top: 170px;
 }
 
+details p {
+  margin-left: 10%;
+  margin-right: 10%;
+  overflow: hidden;
+}
 
 }

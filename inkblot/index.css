@@ -440,6 +440,10 @@ footer {
     padding-top: 5%;
   }
 
+  details p:last-of-type {
+    padding-bottom: 5%;
+  }  
+
   /* mobile*/
 @media (max-width: 800px) { 
 
@@ -501,6 +505,12 @@ footer {
   padding-bottom: 70px;
   height: auto;
   margin-top: 170px;
+}
+
+details p {
+  margin-left: 10%;
+  margin-right: 10%;
+  overflow: hidden;
 }
 
 }

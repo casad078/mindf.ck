@@ -20,6 +20,9 @@ font-family: "neue-haas-grotesk-display", sans-serif;
 font-weight: 900;
 font-style: normal; */
 
+/* html {
+  cursor: url('../images/favicon\ \(1\).ico'), default;
+} */
 
 header {
   background-color: transparent;
